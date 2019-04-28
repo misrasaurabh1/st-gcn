@@ -1,6 +1,8 @@
-work_dir: ./work_dir/recognition/kinetics_skeleton/ST_GCN
+work_dir: ./runs/recognition/kinetics_skeleton/ST_GCN/
 
-# weights: ./models/st_gcn.kinetics.pt
+weights: ./models/st_gcn.kinetics.pt
+ignore_weights: [fcn]
+
 
 # feeder
 feeder: feeder.feeder.Feeder
@@ -26,8 +28,8 @@ model_args:
 
 # training
 device: [0]
-batch_size: 256
-test_batch_size: 256
+batch_size: 16
+test_batch_size: 8
 
 #optim
 base_lr: 0.1

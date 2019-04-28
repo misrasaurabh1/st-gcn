@@ -41,6 +41,9 @@ class REC_Processor(Processor):
         self.model = self.io.load_model(self.arg.model,
                                         **(self.arg.model_args))
         self.model.apply(weights_init)
+        for i, param in enumerate(self.model.parameters()):
+            if i not in [100, 101]:
+                param.requires_grad = False
         self.loss = nn.CrossEntropyLoss()
         
     def load_optimizer(self):
