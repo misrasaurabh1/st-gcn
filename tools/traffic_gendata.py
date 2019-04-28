@@ -34,8 +34,8 @@ def gendata(
         label_path,
         data_out_path,
         label_out_path,
-        num_person_in=5,  #observe the first 5 persons 
-        num_person_out=2,  #then choose 2 persons with the highest score 
+        num_person_in=5,  #observe the first 5 persons
+        num_person_out=2,  #then choose 2 persons with the highest score
         max_frame=300):
 
     feeder = Feeder_kinetics(
@@ -68,17 +68,17 @@ def gendata(
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Kinetics-skeleton Data Converter.')
+        description='Traffic_custom Data Converter.')
     parser.add_argument(
-        '--data_path', default='/home/apoorv/Desktop/VLR/project/st-gcn/dataset/kinetics-skeleton')
+        '--data_path', default='dataset/traffic_custom')
     parser.add_argument(
-        '--out_folder', default='/home/apoorv/Desktop/VLR/project/st-gcn/dataset/kinetics-skeleton')
+        '--out_folder', default='dataset/traffic_custom')
     arg = parser.parse_args()
 
     part = ['train', 'val']
     for p in part:
-        data_path = '{}/kinetics_{}'.format(arg.data_path, p)
-        label_path = '{}/kinetics_{}_label.json'.format(arg.data_path, p)
+        data_path = '{}/traffic_{}'.format(arg.data_path, p)
+        label_path = '{}/traffic_{}_label.json'.format(arg.data_path, p)
         data_out_path = '{}/{}_data.npy'.format(arg.out_folder, p)
         label_out_path = '{}/{}_label.pkl'.format(arg.out_folder, p)
 
