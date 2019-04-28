@@ -9,7 +9,7 @@ test_feeder_args:
 # model
 model: net.st_gcn.Model
 model_args:
-  in_channels: 1 #3
+  in_channels: 3 #3
   num_class: 3
   edge_importance_weighting: True
   graph_args:
